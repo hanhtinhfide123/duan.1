@@ -1,0 +1,29 @@
+<div style="border: 3px outset rgb(26, 66, 83); ">
+    <div class="panel-heading">
+        <div class="panel-title"></div>
+    </div>
+    <div class="panel-body" style="padding:20px">
+	    <div class="form-group">
+	       <span style="background: white;color:black;font-size:13px;font-weight:500">Glass ID</span>
+	        <input ng-model="form.id" class="form-control" readonly/>
+	    </div>
+	    <div class="form-group">
+	       <span style="background: white;color:black;font-size:13px;font-weight:500">Glass Name</span>
+	        <input ng-model="form.name"  class="form-control"/>
+	    </div>
+    </div>
+    <div class="panel-footer text-center" style="margin-top:20px; margin-bottom:20px">
+        <button ng-click="create()" class="btn btn-primary">
+			<b class="glyphicon glyphicon-plus"></b>Create
+		</button>
+        <button ng-click="update()" class="btn btn-success">
+			<b class="glyphicon glyphicon-save"></b>Update
+		</button>
+        <button ng-click="delete(form)" class="btn btn-danger">
+			<b class="glyphicon glyphicon-trash"></b>Delete
+		</button>
+        <button ng-click="reset()" class="btn btn-info">
+			<b class="glyphicon glyphicon-refresh"></b>Reset
+		</button>
+    </div>
+</div>

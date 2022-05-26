@@ -1,0 +1,21 @@
+<div style="border: 2px outset rgb(26, 66, 83); padding:20px ">
+    <div class="panel-heading">AUTHORIZING</div>
+    <table class="table table-border" >
+        <thead>
+            <tr>
+                <th></th>
+                <th ng-repeat="role in roles" style="background: white;color:black" class="text-center">{{role.name}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="acc in admins" style="background: white;color:black">
+                <td>{{acc.fullname}}</td>
+                <th ng-repeat="role in roles" class="text-center">
+                    <input ng-checked="authority_of(acc,role)" 
+                    ng-click="authority_changed(acc,role)"
+                    type="checkbox">
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>

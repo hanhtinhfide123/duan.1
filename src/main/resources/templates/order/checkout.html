@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}">
+
+
+<body>
+    <main>
+    	<div th:replace="~{/cart/view :: shopping-cart}"></div>
+    	
+    	<br>
+    	<br>
+    	<br>
+        <div style="border: 2px outset #419cc3; margin-bottom:20px" >
+        	<div ><h3 style="margin-top:20px; margin-left:20px">ORDER PURCHASING</h3></div>
+        	<div class="panel-body" style="padding:20px" >
+        		<div class="row">
+        			<div class="form-group col-sm-6">
+        				<div style="border-left: 2px outset #419cc3;"><h5>Purchaser:</h5></div>
+        				<div class="form-control" id="username">[[${#request.remoteUser}]]</div>
+        			</div>
+        			<div class="form-group col-sm-6">
+        				<div style="border-left: 2px outset #419cc3;"><h5>Order date</h5></div>
+        				<div class="form-control">{{order.createDate | date :'dd-MM-yyyy'}}</div>
+        			</div>
+        		</div>
+        		<div class="row">
+        			<div class="form-group col-sm-12">
+        				<div style="border-left: 3px outset #419cc3;"><h5>Phone number</h5></div>
+        				<input ng-model="order.phone" class="form-control"></input>
+        			</div>
+        		</div>
+        		<div class="row">
+        			<div class="form-group col-sm-12">
+        				<div style="border-left: 3px outset #419cc3;"><h5>Shipping address</h5></div>
+        				<textarea ng-model="order.address" class="form-control"></textarea>
+        			</div>
+        		</div>
+        	</div>
+        	  <div class="panel-footer" style="margin-left:20px; margin-bottom:20px">
+        	  	<button ng-click="order.purchase()" class="btn btn-success">Purchase</button>
+        	  </div>
+        </div>
+    </main>
+</body>
+
+</html>

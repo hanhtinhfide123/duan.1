@@ -1,0 +1,110 @@
+<div style="border: 3px outset rgb(26, 66, 83); ">
+   
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <label for="image">
+                    <img ng-src="{{'/assets/images/' + form.image}}" style="max-width: 100%; height: 50%;">
+                </label>
+            </div>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                          <span style="background: white;color:black;font-size:13px;font-weight:700">Name</span>
+                        <input ng-model="form.name" class="form-control">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Price</span>
+                        <input ng-model="form.price" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Images</span>
+                        <input  type="file" class="form-control" id="image"
+                        onchange="angular.element(this).scope().imageChanged(this.files)">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Category</span>
+                        <select ng-model="form.category.id" class="form-control">
+                            <option ng-repeat="c in cates" ng-value="c.id">{{c.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Brand</span>
+                        <select ng-model="form.brand.id" class="form-control">
+                            <option ng-repeat="b in bras" ng-value="b.id">{{b.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Glass</span>
+                        <select ng-model="form.glass.id" class="form-control">
+                            <option ng-repeat="g in glas" ng-value="g.id">{{g.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Strap</span>
+                        <select ng-model="form.strap.id" class="form-control">
+                            <option ng-repeat="s in stas" ng-value="s.id">{{s.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Gender</span>
+                        <select ng-model="form.gender.id" class="form-control">
+                            <option ng-repeat="g in gens" ng-value="g.id">{{g.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Movement</span>
+                        <select ng-model="form.movement.id" class="form-control">
+                            <option ng-repeat="m in moves" ng-value="m.id">{{m.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Water Risistant</span>
+                        <select ng-model="form.water.id" class="form-control">
+                            <option ng-repeat="w in wats" ng-value="w.id">{{w.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Collection</span>
+                        <select ng-model="form.collection.id" class="form-control">
+                            <option ng-repeat="c in colls" ng-value="c.id">{{c.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Create Day</span>
+                        <input ng-model="form.createDate" type="date" class="form-control">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <span style="background: white;color:black;font-size:13px;font-weight:700">Avalible?</span>
+                        <div class="form-control">
+                           <label class="radio-inline">
+                            <input ng-model="form.available" ng-value="true" name="available" type="radio">Yes
+                           </label>
+                           <label class="radio-inline">
+                            <input ng-model="form.available" ng-value="false" name="available" type="radio">No
+                           </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-fotter text-center" style="margin-top:20px;margin-bottom:20px">
+        <button ng-click="create()" class="btn btn-primary">
+            <b class="glyphicon glyphicon-plus"></b> Create
+        </button>
+        <button ng-click="update()"class="btn btn-success">
+            <b class="glyphicon glyphicon-save"></b> Update
+        </button>
+        <button ng-click="delete(form)" class="btn btn-danger">
+            <b class="glyphicon glyphicon-trash"></b> Delete
+        </button>
+        <button ng-click="reset()" class="btn btn-info">
+            <b class="glyphicon glyphicon-refesh"></b> Reset
+        </button>
+    </div>
+</div>

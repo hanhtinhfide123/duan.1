@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{layout/index :: dynamic(~{::main})}">
+
+
+<body>
+	<main th:object="${item}">
+		<div class="content-product-box">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-5 text-center"  >
+
+					<img th:src="@{|/assets/images/*{image}|}" style="padding:10px " >
+
+
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-7 ">
+					<ul>
+						<li>Tên:&nbsp; <a th:text="*{name}"></a></li>
+						<li>Giá:&nbsp; <a th:text="*{price}"></a></li>
+						<li>Ngày:&nbsp; <a th:text="*{createDate}"></a></li>
+						<li>Loại:&nbsp; <a th:text="*{category.name}"></a></li>
+						
+					</ul>
+					<table class="table table-striped table-hover">
+						  <thead><h5>Chi tiết</h5></thead>
+						  <tbody>
+						  
+						  	<tr>
+							  <th scope="row">Thương hiệu</th>
+							  <td></td>
+							  <td></td>
+							  <td><a th:text="*{brand.name}"></a></td>
+							</tr>
+							<tr>
+							  <th scope="row">Động cơ</th>
+							  <td></td>
+							  <td></td>
+							  <td><a th:text="*{movement.name}"></a></td>
+							</tr>
+							 <tr>
+							  <th scope="row">Mặt kính</th>
+							  <td></td>
+							  <td></td>
+							  <td><a th:text="*{glass.name}"></a></td>
+							</tr>
+							<tr>
+							  <th scope="row">Loại dây</th>
+							  <td></td>
+							  <td></td>
+							  <td><a th:text="*{strap.name}"></a></td>
+							</tr> 
+							
+							 <tr>
+							  <th scope="row">Bộ sưu tập</th>
+							  <td></td>
+							  <td></td>
+							  <td><a th:text="*{collection.name}"></a></td>
+							</tr> 
+							<tr>
+							  <th scope="row">Độ chống nước</th>
+							  <td></td>
+							  <td></td>
+							  <td><a th:text="*{water.name}">M</a></td>
+							</tr>
+							
+						  </tbody>
+					</table>	
+					<br> <br>
+					<br> <br>
+					<div>
+						<button class="btn btn-success">
+							<a th:attr="ng-click=@{|cart.add(${id})|}" class="buy"><i
+								class="fa fa-cart-plus"></i> Mua ngay</a>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br> <br>
+		<br> <br>
+		<div class="category-box">
+			<h3>Sản phẩm cùng loại</h3>
+			<div class="content-cat">
+				<ul>
+					<li th:each="p:*{brand.products}"><i
+						class="fa fa-angle-right"></i> <a
+						th:href="@{|/product/detail/${p.id}|}" th:text="${p.name}">[[${p.name}]]</a></li>
+
+				</ul>
+			</div>
+		</div>
+
+	</main>
+</body>
+
+</html>

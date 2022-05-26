@@ -1,0 +1,48 @@
+<div class="panel panel-primary" style="border: 2px outset rgb(26, 66, 83); ">
+        	<div class="panel-body" style="padding:20px">
+        		<div class="row">
+        			<div class="form-group col-sm-4">
+        				<span style="background: white;color:black;font-size:13px;font-weight:500">Order Numble</span>
+        				<input ng-model="form.id"  class="form-control" readonly>
+        			</div>
+        			<div class="form-group col-sm-4">
+        				<span style="background: white;color:black;font-size:13px;font-weight:500">Purchaser</span>
+        				<input ng-model="form.account.username"   class="form-control" readonly>
+        			</div>
+        			<div class="form-group col-sm-4">
+        				<span style="background: white;color:black;font-size:13px;font-weight:500">Perchaser Day</span>
+        				<input ng-model="form.createDate" class="form-control" readonly>
+        			</div>
+        		</div>
+        		<div class="row">
+        		<div class="form-group col-sm-5">
+        				<span style="background: white;color:black;font-size:13px;font-weight:500">Phone num</span>
+        				<input ng-model="form.phone" class="form-control" readonly></input>	
+        			</div>
+        			<div class="form-group col-sm-7">
+        				<span style="background: white;color:black;font-size:13px;font-weight:500">Shipping address</span>
+        				<input ng-model="form.address" class="form-control" readonly></input>	
+        			</div>
+        		</div>
+        			     <div class="form-group">
+                        <span style="background: white;color:black;font-size:13px;font-weight:500">Status</span>
+                        <select ng-model="form.status.id" class="form-control">
+                            <option ng-repeat="s in stus" ng-value="s.id">{{s.name}}</option>
+                        </select>
+          </div>
+        		<div class="panel-footer text-center" style="margin-top:20px; margin-bottom:20px">
+
+        <button ng-click="update()" class="btn btn-success">
+			<b class="glyphicon glyphicon-save"></b>Update
+		</button>
+        <button ng-click="delete(form)" class="btn btn-danger">
+			<b class="glyphicon glyphicon-trash"></b>Delete
+		</button>
+
+		</button>
+    </div>
+        		
+        	</div>
+        	</div>	
+        	<br>
+        	<br>
